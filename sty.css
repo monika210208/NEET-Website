@@ -1,0 +1,52 @@
+body {
+margin:0;
+font-family: Arial;
+}
+
+.app {
+display:flex;
+}
+
+.sidebar {
+width:220px;
+background:#2c3e50;
+color:white;
+height:100vh;
+padding:20px;
+}
+
+.sidebar button {
+width:100%;
+margin:10px 0;
+padding:10px;
+border:none;
+background:#34495e;
+color:white;
+cursor:pointer;
+}
+
+.main {
+flex:1;
+padding:20px;
+background:#ecf0f1;
+}
+
+.hidden {
+display:none;
+}
+
+.cards {
+display:flex;
+gap:10px;
+}
+
+.cards div {
+background:white;
+padding:15px;
+border-radius:10px;
+}
+
+.dark {
+background:#121212;
+color:white;
+}
