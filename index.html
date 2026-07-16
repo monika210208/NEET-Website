@@ -4,43 +4,49 @@
 <meta charset="UTF-8">
 <title>NEET Prep Analyzer</title>
 <link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
 
-<div class="app">
+<header>
+<h1>🧠 NEET Prep Analyzer</h1>
+</header>
 
-<!-- SIDEBAR -->
-<div class="sidebar">
-<h2>🧠 NEET Prep</h2>
+<nav>
 <button onclick="show('dashboard')">Dashboard</button>
 <button onclick="show('analysis')">Analysis</button>
 <button onclick="show('pyq')">PYQs</button>
 <button onclick="show('quiz')">Quiz</button>
 <button onclick="toggleDark()">🌙</button>
-</div>
+</nav>
 
-<!-- MAIN -->
-<div class="main">
-
+<!-- DASHBOARD -->
 <section id="dashboard">
-<h1>📊 Dashboard</h1>
-<p>Track NEET trends & performance</p>
+<h2>📊 Dashboard</h2>
 
 <div class="cards">
-<div>Biology: 50%</div>
-<div>Chemistry: 25%</div>
-<div>Physics: 25%</div>
+<div>🧬 Biology<br><b>50%</b></div>
+<div>⚗️ Chemistry<br><b>25%</b></div>
+<div>⚡ Physics<br><b>25%</b></div>
 </div>
+
+<p class="info">
+✔ Biology is scoring<br>
+✔ Physics is toughest<br>
+✔ Chemistry is moderate
+</p>
 </section>
 
+<!-- ANALYSIS -->
 <section id="analysis" class="hidden">
-<h1>📈 Trend Analysis</h1>
+<h2>📈 Trend Analysis</h2>
 <canvas id="chart"></canvas>
 </section>
 
+<!-- PYQ -->
 <section id="pyq" class="hidden">
-<h1>📚 Practice PYQs</h1>
+<h2>📚 Practice PYQs</h2>
 
 <select id="subject">
 <option>Biology</option>
@@ -53,18 +59,14 @@
 <div id="questions"></div>
 </section>
 
+<!-- QUIZ -->
 <section id="quiz" class="hidden">
-<h1>🧠 Quiz</h1>
+<h2>🧠 Quiz</h2>
 <p id="q"></p>
 <div id="opts"></div>
 <p id="score"></p>
 </section>
 
-</div>
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="script.js"></script>
-
 </body>
 </html>
