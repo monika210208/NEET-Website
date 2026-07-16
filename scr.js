@@ -1,91 +1,74 @@
-// NAVIGATION
-function show(id){
-document.querySelectorAll("section").forEach(s=>s.classList.add("hidden"));
-document.getElementById(id).classList.remove("hidden");
+body {
+font-family: Arial;
+margin: 0;
+background: #f5f7fa;
 }
 
-// DARK MODE
-function toggleDark(){
-document.body.classList.toggle("dark");
+header {
+background: #2c3e50;
+color: white;
+padding: 15px;
+text-align: center;
 }
 
-// CHART (TREND)
-let ctx = document.getElementById("chart");
-if(ctx){
-new Chart(ctx,{
-type:'line',
-data:{
-labels:["2020","2021","2022","2023","2024"],
-datasets:[
-{
-label:"Physics Difficulty",
-data:[6,7,8,8,9]
-},
-{
-label:"Biology Ease",
-data:[8,9,9,8,9]
-}
-]
-}
-});
+nav {
+display: flex;
+justify-content: center;
+background: #34495e;
 }
 
-// PYQ DATA
-const pyqs = {
-Biology:[
-"Which is powerhouse of cell?",
-"DNA is located in?"
-],
-Physics:[
-"Unit of force?",
-"Velocity formula?"
-],
-Chemistry:[
-"pH of water?",
-"Atomic number?"
-]
-};
-
-function loadPYQ(){
-let sub=document.getElementById("subject").value;
-let div=document.getElementById("questions");
-div.innerHTML="";
-
-pyqs[sub].forEach(q=>{
-let p=document.createElement("p");
-p.innerText=q;
-div.appendChild(p);
-});
+nav button {
+padding: 10px 20px;
+border: none;
+background: none;
+color: white;
+cursor: pointer;
 }
 
-// QUIZ
-const quiz=[
-{q:"NEET full form?",o:["Medical Exam","National Eligibility cum Entrance Test"],a:1},
-{q:"Biology weightage?",o:["50%","25%"],a:0}
-];
-
-let i=0,score=0;
-
-function loadQuiz(){
-let q=quiz[i];
-document.getElementById("q").innerText=q.q;
-
-let opts=document.getElementById("opts");
-opts.innerHTML="";
-
-q.o.forEach((opt,index)=>{
-let b=document.createElement("button");
-b.innerText=opt;
-b.onclick=()=>check(index);
-opts.appendChild(b);
-});
+nav button:hover {
+background: #1abc9c;
 }
 
-function check(ans){
-if(ans===quiz[i].a) score++;
-i++;
-if(i<quiz.length) loadQuiz();
-else document.getElementById("score").innerText="Score: "+score;
+section {
+padding: 20px;
 }
 
-loadQuiz();
+.hidden {
+display: none;
+}
+
+/* CARDS */
+.cards {
+display: flex;
+gap: 20px;
+margin-top: 15px;
+}
+
+.cards div {
+background: white;
+padding: 20px;
+border-radius: 10px;
+box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.info {
+margin-top: 15px;
+}
+
+/* PYQ */
+#questions p {
+background: white;
+padding: 10px;
+margin: 10px 0;
+border-radius: 5px;
+}
+
+/* DARK MODE */
+.dark {
+background: #121212;
+color: white;
+}
+
+.dark nav {
+background: #000;
+}
