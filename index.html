@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>NEET Prep Analyzer</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+<h2>🧠 NEET Prep</h2>
+<button onclick="show('dashboard')">Dashboard</button>
+<button onclick="show('analysis')">Analysis</button>
+<button onclick="show('pyq')">PYQs</button>
+<button onclick="show('quiz')">Quiz</button>
+<button onclick="toggleDark()">🌙</button>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+<section id="dashboard">
+<h1>📊 Dashboard</h1>
+<p>Track NEET trends & performance</p>
+
+<div class="cards">
+<div>Biology: 50%</div>
+<div>Chemistry: 25%</div>
+<div>Physics: 25%</div>
+</div>
+</section>
+
+<section id="analysis" class="hidden">
+<h1>📈 Trend Analysis</h1>
+<canvas id="chart"></canvas>
+</section>
+
+<section id="pyq" class="hidden">
+<h1>📚 Practice PYQs</h1>
+
+<select id="subject">
+<option>Biology</option>
+<option>Physics</option>
+<option>Chemistry</option>
+</select>
+
+<button onclick="loadPYQ()">Load Questions</button>
+
+<div id="questions"></div>
+</section>
+
+<section id="quiz" class="hidden">
+<h1>🧠 Quiz</h1>
+<p id="q"></p>
+<div id="opts"></div>
+<p id="score"></p>
+</section>
+
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
